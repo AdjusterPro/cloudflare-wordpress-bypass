@@ -1,24 +1,22 @@
 const Router = require('./router')
+const Handler = require('./handler')
+
+function register_routes(handler) {
+  const r = new Router()
+
+  r.get('^/canary$', req => handler.hello_world(req))
+  r.get('/lms/.*', req => handler.bypass_cache(req)) // TODO remove this; was just a proof of concept
+
+  r.get('.*', req => fetch(req))
+
+  return r
+}
+
+async function handleRequest(request) {
+  const router = await register_routes(new Handler())
+  return await router.route(request)
+}
 
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
-
-/**
- * Respond with hello worker text
- * @param {Request} request
- */
-function hello_world(request) {
-  return new Response('Hello worker!', {
-    headers: { 'content-type': 'text/plain' },
-  })
-}
-
-async function handleRequest(request) {
-    const r = new Router()
-    r.get('/hello_world', req => hello_world(req))
-    r.get('.*', req => fetch(req)) // return the response from the origin
-
-    const resp = await r.route(request)
-    return resp
-}

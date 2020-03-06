@@ -1,17 +1,5 @@
-# 👷 `worker-template` Hello World
+# 👷 Cloudflare cache-bypass worker for WordPress sites
 
-A template for kick starting a Cloudflare worker project.
+Inspired-by/derived-from Patrick Meenan's [Bypass Cache on Cookie](https://github.com/pmeenan/cf-workers/tree/master/cache-bypass-on-cookie)
 
-[`index.js`](https://github.com/cloudflare/worker-template/blob/master/index.js) is the content of the Workers script.
-
-#### Wrangler
-
-To generate using [wrangler](https://github.com/cloudflare/wrangler)
-
-```
-wrangler generate projectname https://github.com/cloudflare/worker-template
-```
-
-#### Serverless
-
-To deploy using serverless add a [`serverless.yml`](https://serverless.com/framework/docs/providers/cloudflare/) file.
+Not quite finished yet.
