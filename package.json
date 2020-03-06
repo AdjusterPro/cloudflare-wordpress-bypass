@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "name": "wordpress-bypass",
+  "version": "1.0.0",
+  "description": "Bypass Cloudflare cache for requests with WordPress cookies",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write '**/*.{js,css,json,md}'"
+  },
+  "author": "Ben Dunlap <ben@adjusterpro.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^1.18.2"
+  }
+}
