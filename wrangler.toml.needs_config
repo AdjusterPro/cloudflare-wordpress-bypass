@@ -1,0 +1,23 @@
+# 
+# Instructions:
+# - copy this file to wrangler.toml
+# - add your own Cloudflare Account ID, Zone ID(s), and routes below
+# - remove these lines
+# 
+name = "wordpress-bypass-dev"
+type = "webpack"
+workers_dev = true
+webpack_config = "webpack.development.js"
+account_id = "YOUR ACCOUNT ID HERE"
+
+[env.staging]
+name="wordpress-bypass-staging"
+webpack_config = "webpack.production.js"
+route = "YOUR STAGING ROUTE HERE"
+zone_id = "YOUR STAGING ZONE ID HERE"
+
+[env.production]
+name="wordpress-bypass"
+webpack_config = "webpack.production.js"
+route = "YOUR PRODUCTION ROUTE HERE"
+zone_id= "YOUR PRODUCTION ZONE HERE"
